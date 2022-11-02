@@ -1,11 +1,13 @@
+/* eslint-disable react/react-in-jsx-scope */
 // eslint-disable-next-line prettier/prettier
 import { render, screen } from '@testing-library/react';
 import App from "../components/App";
+import forecast from "../data/forecast.json";
 
-// eslint-disable-next-line prettier/prettier
-test('renders learn react link', () => {
-  // eslint-disable-next-line react/react-in-jsx-scope
-  render(<App />);
-  const linkElement = screen.getByText(/Weather App/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+  test("renders App component correctly", () => {
+    render(<App location={forecast.location} />);
+    const h1Element = screen.getByText(/Manchester, UK/i);
+    expect(h1Element).toBeInTheDocument();
+  });
 });
