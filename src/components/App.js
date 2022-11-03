@@ -6,12 +6,11 @@ import PropTypes from 'prop-types';
 import LocationDetails from "./LocationDetails";
 import ForecastSummaries from "./ForecastSummaries";
 
-function App(props) {
-  const {location} = props
+function App({location, forecasts}) {
   return (
-    <div className="App">
+    <div className="forecast">
       <LocationDetails city={location.city} country={location.country} />
-      <ForecastSummaries />
+      <ForecastSummaries forecasts={forecasts}/>
     </div>
   );
 };

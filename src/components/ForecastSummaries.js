@@ -5,7 +5,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable prettier/prettier */
 import React from "react";
-import { PropTypes } from "prop-types";
+import PropTypes  from "prop-types";
 import ForecastSummary from "./ForecastSummary";
 
 const ForecastSummaries = ({ forecasts }) => (
