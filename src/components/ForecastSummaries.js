@@ -7,6 +7,7 @@
 import React from "react";
 import PropTypes  from "prop-types";
 import ForecastSummary from "./ForecastSummary";
+import "../styles/ForecastSummaries.css";
 
 const ForecastSummaries = ({ forecasts }) => (
     <div className="forecast-summaries">
@@ -29,9 +30,9 @@ ForecastSummaries.propTypes = {
     date: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     icon: PropTypes.string.isRequired,
-    })),
     temperature: PropTypes.shape({
-        min: PropTypes.number,
         max: PropTypes.number,
+        min: PropTypes.number,
     }).isRequired,
+  }))
 };
