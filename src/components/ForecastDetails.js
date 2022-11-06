@@ -1,0 +1,56 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/require-default-props */
+/* eslint-disable prettier/prettier */
+import React from "react";
+import PropTypes from "prop-types";
+
+function ForecastDetails({forecast}) {
+ const {
+    date,
+    temperature,
+    humidity,
+    wind
+ } = forecast
+ 
+ const formattedDate = new Date(date).toDateString();
+
+ return(
+    <div className="forecast-details" data-testId="forecast-details">
+        <div className="forecast-details__date">
+            {formattedDate}
+        </div>
+        <div className="forecast-details__maxTemperature">
+            Max Temperature: {temperature.max}
+            &deg;C
+        </div>
+        <div className="forecast-details__minTemperature">
+            Min Temperature: {temperature.min}
+            &deg;C
+        </div>
+        <div className="forecast-details__humidity">
+            {humidity}
+        </div>
+        <div className="forecast-details__windSpeed">
+            Wind Speed: {wind.speed}
+        </div>
+        <div className="forecast-details__windDirection">
+            Wind Direction: {wind.direction}
+        </div>
+    </div>
+ );
+};
+
+export default ForecastDetails;
+
+ForecastDetails.propTypes = {
+    date: PropTypes.number.isRequired,
+    humidity: PropTypes.number.isRequired,
+    temperature: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+    }).isRequired,
+    wind: PropTypes.shape({
+        speed: PropTypes.number,
+        direction: PropTypes.string,
+    }).isRequired
+};
