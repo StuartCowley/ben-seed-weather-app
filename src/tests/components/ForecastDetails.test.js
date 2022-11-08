@@ -1,6 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable no-unused-vars */
-/* eslint-disable prettier/prettier */
 import React from "react";
 import { render } from "@testing-library/react";
 import ForecastDetails from "../../components/ForecastDetails";
@@ -10,8 +7,8 @@ describe("ForecastDetails", () => {
     date: 1525046400000,
     humidity: 10,
     wind: {
-        speed: 100,
-        direction: "South East",
+      speed: 100,
+      direction: "South East",
     },
     temperature: {
       max: 11,
@@ -21,8 +18,8 @@ describe("ForecastDetails", () => {
 
   describe("ForecastDetails-snapshot", () => {
     it("renders props correctly", () => {
-      const { asFragment } = render( 
-        <ForecastDetails forecast={validProps}/> // see line 7 of ForecastDetails.js
+      const { asFragment } = render(
+        <ForecastDetails forecast={validProps} /> // see line 7 of ForecastDetails.js
       );
 
       expect(asFragment()).toMatchSnapshot();
@@ -30,15 +27,31 @@ describe("ForecastDetails", () => {
   });
 
   it("renders correct values for props", () => {
-    const { getByText } = render(
-      <ForecastDetails forecast={validProps}/>);
+    const { getByText } = render(<ForecastDetails forecast={validProps} />);
 
-        expect(getByText("Mon Apr 30 2018")).toHaveAttribute("class", "forecast-details__date");
-        expect(getByText("Max Temperature: 11°C")).toHaveAttribute("class", "forecast-details__maxTemperature");
-        expect(getByText("Min Temperature: 2°C")).toHaveAttribute("class", "forecast-details__minTemperature");
-        expect(getByText(10)).toHaveAttribute("class", "forecast-details__humidity");
-        expect(getByText("Wind Speed: 100")).toHaveAttribute("class", "forecast-details__windSpeed");
-        expect(getByText("Wind Direction: South East")).toHaveAttribute("class", "forecast-details__windDirection");
-        
-    });
+    expect(getByText("Mon Apr 30 2018")).toHaveAttribute(
+      "class",
+      "forecast-details__date"
+    );
+    expect(getByText("Max Temperature: 11°C")).toHaveAttribute(
+      "class",
+      "forecast-details__maxTemperature"
+    );
+    expect(getByText("Min Temperature: 2°C")).toHaveAttribute(
+      "class",
+      "forecast-details__minTemperature"
+    );
+    expect(getByText("Humidity: 10")).toHaveAttribute(
+      "class",
+      "forecast-details__humidity"
+    );
+    expect(getByText("Wind Speed: 100")).toHaveAttribute(
+      "class",
+      "forecast-details__windSpeed"
+    );
+    expect(getByText("Wind Direction: South East")).toHaveAttribute(
+      "class",
+      "forecast-details__windDirection"
+    );
+  });
 });

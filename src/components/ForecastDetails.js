@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -8,7 +7,7 @@ function ForecastDetails({ forecast }) {
   const formattedDate = new Date(date).toDateString();
 
   return (
-    <div className="forecast-details" data-testId="forecast-details">
+    <div className="forecast-details" data-testid="forecast-details">
       <div className="forecast-details__date">{formattedDate}</div>
       <div className="forecast-details__maxTemperature">
         Max Temperature: {temperature.max}
@@ -32,14 +31,16 @@ function ForecastDetails({ forecast }) {
 export default ForecastDetails;
 
 ForecastDetails.propTypes = {
-  date: PropTypes.number.isRequired,
-  humidity: PropTypes.number.isRequired,
-  temperature: PropTypes.shape({
-    max: PropTypes.number,
-    min: PropTypes.number,
-  }).isRequired,
-  wind: PropTypes.shape({
-    speed: PropTypes.number,
-    direction: PropTypes.string,
+  forecast: PropTypes.shape({
+    date: PropTypes.number.isRequired,
+    humidity: PropTypes.number.isRequired,
+    temperature: PropTypes.shape({
+      max: PropTypes.number,
+      min: PropTypes.number,
+    }).isRequired,
+    wind: PropTypes.shape({
+      speed: PropTypes.number,
+      direction: PropTypes.string,
+    }).isRequired,
   }).isRequired,
 };

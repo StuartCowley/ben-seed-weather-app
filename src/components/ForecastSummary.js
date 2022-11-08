@@ -31,9 +31,9 @@ ForecastSummary.propTypes = {
   date: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired,
+  onSelect: PropTypes.func.isRequired,
   temperature: PropTypes.shape({
     min: PropTypes.number,
     max: PropTypes.number,
   }).isRequired,
-  onSelect: PropTypes.func.isRequired,
 };

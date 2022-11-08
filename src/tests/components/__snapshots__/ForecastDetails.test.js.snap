@@ -24,7 +24,7 @@ exports[`ForecastDetails ForecastDetails-snapshot renders props correctly 1`] = 
     <div
       class="forecast-details__humidity"
     >
-      10
+      Humidity: 10
     </div>
     <div
       class="forecast-details__windSpeed"
