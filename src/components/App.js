@@ -21,7 +21,7 @@ function App() {
   };
 
   const handleCitySearch = () => {
-    getForecast(setSearchText, setForecasts, setLocation, setSelectedDate);
+    getForecast(searchText, setForecasts, setLocation, setSelectedDate);
   };
 
   useEffect(() => {
