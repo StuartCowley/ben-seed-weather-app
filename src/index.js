@@ -9,8 +9,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-// render(
-//   <React.StrictMode>
-//     <App location={forecast.location} forecasts={forecast.forecasts}/>
-//   </React.StrictMode>,document.getElementById('root'));
