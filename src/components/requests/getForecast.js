@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /* eslint-disable no-console */
 import axios from "axios";
 
@@ -20,6 +21,7 @@ const getForecast = (
       setSelectedDate(response.data.forecasts[0].date);
       setForecasts(response.data.forecasts);
       setLocation(response.data.location);
+      setErrorMessage("");
     })
     .catch((error) => {
       const { status } = error.response;
