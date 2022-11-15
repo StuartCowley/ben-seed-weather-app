@@ -1,0 +1,19 @@
+.forecast-summary {
+    margin: 50px;
+    padding: 20px;
+    text-align: center;
+    background-color: lightblue;
+    font-size: medium;
+  }
+  
+  .forecast-summary div {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .forecast-summary__icon {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 60px;
+  }
+  
